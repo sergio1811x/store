@@ -1,8 +1,9 @@
 
   
-##  npm install - установка зависимостей
+#  npm install - установка зависимостей
   
-##  npm run dev - версия development
+#  npm run dev - версия development
+
 
 
 
