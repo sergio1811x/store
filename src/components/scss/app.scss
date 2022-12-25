@@ -1,0 +1,163 @@
+@import "~bootstrap/scss/bootstrap";
+
+.wrapper {
+  width: calc(100vw - 100px);
+  height: 100%;
+  max-width: 1400px;
+  display: flex;
+  margin-top: 50px;
+
+
+  .sort {
+    margin-left: 50px;
+    white-space: nowrap;
+
+    span {
+      cursor: pointer;
+      color: #455a64;
+      font-size: 18px;
+
+      &.active {
+        font-weight: bold;
+        color: #ffc107;
+
+      }
+    }
+
+    li {
+      list-style-type: none;
+      cursor: pointer;
+      color: #455a64;
+      font-size: 18px;
+
+      &.active {
+        font-weight: bold;
+        color: #ffc107;
+      }
+    }
+  }
+
+  .item_container {
+    margin-left: 200px;
+
+    .item {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 50px;
+
+      .image {
+        width: 300px;
+      }
+
+      .about {
+        margin-left: 40px;
+
+        .price {
+          font-size: 16px;
+          font-weight: 700;
+        }
+
+        .button {
+          position: relative;
+          top: -70px;
+          left: 48%;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    margin-left: 50px;
+  }
+
+  .cart {
+    margin-right: 120px;
+    text-decoration: none;
+
+    .cart_count {
+      font-weight: 700;
+      font-size: 30px;
+      color: #455a64;
+    }
+  }
+}
+
+.logo_cart {
+  text-align: center;
+  padding: 40px 0;
+}
+
+
+.wrapper_cart {
+  position: relative;
+  left: 15%;
+  margin-top: 50px;
+
+  .cart_block {
+    width: 70%;
+
+    .bottom_block {
+      text-align: right;
+      margin-right: 95px;
+      margin-top: 25px;
+
+      .total_price {
+        padding-right: 80px;
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+
+
+    .name_items {
+      font-size: 22px;
+      font-weight: 500;
+      display: grid;
+      grid-template-columns: 100px 95px 90px 0;
+      grid-column-gap: 120px;
+      margin-left: 23.5%;
+
+
+    }
+
+    .cart_items {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-bottom: #a7a2a2 1px solid;
+      align-items: center;
+
+      .cart_items_img {
+        width: 120px;
+        margin-left: 70px;
+      }
+
+      .cart_items_text {
+        margin-left: 70px;
+        margin-right: 40px;
+        font-size: 20px;
+      }
+
+      .cart_items_del_img {
+        width: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
