@@ -34,6 +34,8 @@ const Cart = () => {
     dispatch(addToCart(cartItem));
     dispatch(totalPriceItem(cartItem));
   };
+
+
   return (
     <div>
       <div className={"logo_cart"}>
@@ -52,8 +54,10 @@ const Cart = () => {
             <span className={"name_items_span"}>Qty</span>
             <span className={"name_items_span"}>Total</span>
           </div>
-          {cartItems.map((cartItem: Items, index: number) => (
-            <div className={"cart_items"}>
+
+
+          {totalPrice > 0 ?  cartItems.map((cartItem: Items, index: number) => (
+            <div className={"cart_items"} key={index}>
               <img className={"cart_items_img"} src={cartItem.image} />
               <span className={"cart_items_text"}>
                 Brand: {cartItem.brand + "  " + cartItem.title}
@@ -93,7 +97,8 @@ const Cart = () => {
                 />
               </span>
             </div>
-          ))}
+          ))  :
+              <div className={'cart_null'}>Cart is empty</div>}
           <div className={"bottom_block"}>
             <span className={"total_price"}>
               Subtotal: {Math.floor(totalPrice * 100) / 100 + " $"}
@@ -114,4 +119,3 @@ const Cart = () => {
 
 export default Cart;
 
-//?.toFixed(2)

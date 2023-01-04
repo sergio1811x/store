@@ -19,7 +19,7 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart(state, action: PayloadAction<Items>) {
       const itemIndex = state.cartItems.findIndex(
-        (item) => item.id === action.payload.id
+          (item) => item.id === action.payload.id
       );
       if (itemIndex >= 0) {
         state.cartItems[itemIndex].totalCount += 1;
@@ -34,7 +34,7 @@ export const cartSlice = createSlice({
     },
     removeCart(state, action: PayloadAction<Items>) {
       const nextCartItem = state.cartItems.filter(
-        (cartItem) => cartItem.id !== action.payload.id
+          (cartItem) => cartItem.id !== action.payload.id
       );
       state.cartItems = nextCartItem;
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -44,10 +44,11 @@ export const cartSlice = createSlice({
       state.cartItems = [];
       state.totalPrice = 0;
       state.AddBtn = [];
+      localStorage.clear();
     },
     minusItem(state, action: PayloadAction<Items>) {
       const itemIndex = state.cartItems.findIndex(
-        (item) => item.id === action.payload.id
+          (item) => item.id === action.payload.id
       );
       if (state.cartItems[itemIndex].totalCount > 1) {
         state.cartItems[itemIndex].totalCount -= 1;
@@ -57,11 +58,11 @@ export const cartSlice = createSlice({
     },
     totalPriceItem(state, action: PayloadAction<Items>) {
       const itemIndex = state.cartItems.findIndex(
-        (item) => item.id === action.payload.id
+          (item) => item.id === action.payload.id
       );
       state.cartItems[itemIndex].totalPriceItem =
-        state.cartItems[itemIndex].regular_price.value *
-        state.cartItems[itemIndex].totalCount;
+          state.cartItems[itemIndex].regular_price.value *
+          state.cartItems[itemIndex].totalCount;
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
   },
