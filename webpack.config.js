@@ -1,29 +1,30 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const production = process.env.NODE_ENV === "production";
+const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/index.tsx"),
+  entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: production ? "[name].[contenthash].js" : "[name].js",
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
+    filename: production ? '[name].[contenthash].js' : '[name].js',
   },
   module: {
     rules: [
       {
         test: /\.(jsx?)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
       {
         test: /\.tsx?$/,
-        loader: "ts-loader",
+        loader: 'ts-loader',
         options: {
-          configFile: path.resolve(__dirname, "./tsconfig.json"),
+          configFile: path.resolve(__dirname, './tsconfig.json'),
         },
       },
 
@@ -31,18 +32,18 @@ module.exports = {
         test: /\.scss|css|sass$/,
         exclude: /node_modules/,
         use: [
-          production ? MiniCssExtractPlugin.loader : "style-loader",
-          "css-loader",
-          "sass-loader",
+          production ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
-      { test: /\.json$/, type: "json" },
+      { test: /\.json$/, type: 'json' },
       {
         test: /\.(jpg|png|webp|gif|svg)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
         use: [
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
                 progressive: true,
@@ -69,18 +70,18 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx", ".ts", ".tsx", ".scss"],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.scss'],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: "Webpack & React",
-      template: "./public/index.html",
-      favicon: "./public/favicon.ico",
+      title: 'Webpack & React',
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
-      filename: production ? "[name].[contenthash].css" : "[name].css",
+      filename: production ? '[name].[contenthash].css' : '[name].css',
     }),
   ],
   devServer: {
@@ -88,8 +89,6 @@ module.exports = {
     hot: true,
     open: true,
     historyApiFallback: true,
-
-
   },
-  mode: production ? "production" : "development",
+  mode: production ? 'production' : 'development',
 };

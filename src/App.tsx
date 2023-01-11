@@ -1,8 +1,8 @@
-import React, { Suspense } from "react";
-import "./components/scss/app.scss";
-import HomePage from "./components/HomePage";
-import Cart from "./components/Cart";
-import { Route, Routes } from "react-router";
+import React, { Suspense } from 'react';
+import './components/scss/app.scss';
+import HomePage from './components/HomePage';
+import Cart from './components/Cart';
+import { Route, Routes } from 'react-router';
 
 function App() {
   return (
