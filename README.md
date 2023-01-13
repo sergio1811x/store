@@ -1,8 +1,8 @@
 ### https://sergio1811x.github.io/test_task-store/
   
-###  npm install - установка зависимостей
+ npm install - установка зависимостей
   
-###  npm run dev - версия development
+ npm run dev - версия development
 
 
 
