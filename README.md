@@ -5,21 +5,6 @@
  npm run dev - версия development
 
 
-
-
-## Тестовое задание для фронтенд-разработчика (React)
-
-В тестовом задании представлены макеты дизайна двух страниц: страницы каталога продуктов и страница корзины. 
-
-Условий несколько:
-- Используйте менеджер пакетов NPM;
-- Используйте TypeScript;
-- Используйте [React](https://github.com/facebook/react);
-- Используйте [Redux](https://github.com/reduxjs/react-redux);
-- Сборка скриптов [Webpack](https://webpack.js.org/);
-- Сборка стилей проекта должна выполняться [Weabpack](https://webpack.js.org/) или [Gulp](https://github.com/gulpjs/gulp);
-- Работоспособность последних версиях браузеров Chrome, Safari и Firefox;
-
 ## Задачи
 ### Level 1
 
