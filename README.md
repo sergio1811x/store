@@ -1,4 +1,4 @@
-### https://sergio1811x.github.io/test_task-store/
+### https://sergio1811x.github.io/store/
 
 Тестовый магазин с корзиной 
   
